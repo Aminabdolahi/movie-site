@@ -1,3 +1,4 @@
+import Notfound from "@/app/not-found";
 import Image from "next/image";
 
 const getData = async (id) => {
@@ -9,14 +10,19 @@ const getData = async (id) => {
 
 const Single = async ({ params }) => {
   const data = await getData(params.id);
-  console.log(data);
+
+  if (!data.id){
+    return Notfound();
+  }
+
   return (
-    <main className=" container mx-auto leading-loose text-justify text-gray-800">
-      <section className="rounded-lg bg-zinc-100 p-8 flex justify-between items-start">
+    <div className=" container mx-auto leading-loose text-justify  text-gray-50">
+      <section className="rounded-lg bg-[#1a1010] p-8 flex justify-between items-start">
         <div className='text-[20px]'>
           <h1>{data.title}</h1>
           <div>سال ساخت :{data.year}</div>
           <div>کارگردان :{data.director}</div>
+          <div>مدت زمان فیلم: {data.runtime}</div>
           <div>امتیاز IMDB :{data.imdb_rating}</div>
         <div>
             <div>خلاصه فیلم:</div>
@@ -27,7 +33,7 @@ const Single = async ({ params }) => {
             <div className="flex justify-start items-center gap-8">
                 {
                     data.genres.map((gen, i)=>(
-                        <div key={i} className="bg-zinc-200 rounded-lg ">{gen}</div>
+                        <div key={i} className="bg-[#ca6b12] px-2  rounded-lg ">{gen}</div>
                     ))
                 }
                 </div>
@@ -61,7 +67,7 @@ const Single = async ({ params }) => {
         ))
        }
       </section>
-    </main>
+    </div>
   );
 };
 

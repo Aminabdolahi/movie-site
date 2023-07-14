@@ -12,11 +12,11 @@ const getData = async() => {
 const Home =async () => {
   const data = await getData();
   return (
-    <main className="flex flex-col gap-8 container mx-auto ">
+    <main className="flex flex-col gap-8 container mx-auto text-gray-50 ">
       <div className="flex justify-center items-center flex-wrap gap-4">
         {
           data.data.map((mov)=>(
-            <Link key={mov.id} href={`/movies/${mov.id}`} className="h-[28rem] w-1/6 border-2 shadow-lg bg-orange-100 shadow-black border-zinc-300 rounded-2xl p-4 ">
+            <Link key={mov.id} href={`/movies/${mov.id}`} className="h-[28rem] w-1/6 border-2 shadow-lg bg-[#1a1010] shadow-black border-zinc-300 rounded-2xl p-4 ">
               <div className="justify-center items-center flex">
               <Image className="rounded-lg hover:transition hover:scale-110 duration-700 hover:rotate-1" src={mov.poster} height={260} width={200} alt={mov.title}/>
               </div>
