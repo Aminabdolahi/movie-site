@@ -19,8 +19,9 @@
 body {
   padding: 0;
   margin: 0;
-  font-family: salamat, Georgia, 'Times New Roman', Times, serif;
+  font-family: salamat , cursive;
   direction: rtl;
+  background-color: rgb(183, 172, 193);
 }
 
 @font-face {

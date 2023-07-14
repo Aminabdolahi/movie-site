@@ -1,9 +1,11 @@
 const Footer = () => {
-    return (
-        <footer className="text-center text-[32px] items-center flex justify-center text-white bg-zinc-500 h-[20vh] p-2">
-            این وبسایت متعلق به امین است
-        </footer>
-    );
-}
+  return (
+    <footer className="text-center text-[20px] items-center flex rounded-lg  justify-center text-white bg-gray-500 h-[15vh] p-2">
+      <div>
+        
+      </div>
+    </footer>
+  );
+};
 
 export default Footer;
